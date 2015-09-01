@@ -13,11 +13,11 @@ import javax.imageio.ImageIO;
 public class CaveRenderer {
 	public static void main(String[] args) {
 		//*
-		for(File file:new File("C:/caves").listFiles()) {
+		for(File file:new File("caves").listFiles()) {
 			file.delete();
 		}
 		/**/
-		for(int count = 0;count < 10;count++) {
+		for(int count = 0;count < 1;count++) {
 			CaveGenerator.generate();
 			int size = (CaveGenerator.mapSize)*3;
 			int half = size/2;
@@ -135,7 +135,7 @@ public class CaveRenderer {
 		try {
             BufferedImage bigImg = new BufferedImage(img.getWidth()*4, img.getHeight()*4, BufferedImage.TYPE_INT_RGB);
             bigImg.createGraphics().drawImage(img, 0, 0, img.getWidth()*4, img.getHeight()*4, null);
-			ImageIO.write(bigImg, "png", new File("C:/caves/" + filename));
+			ImageIO.write(bigImg, "png", new File("caves/" + filename));
 			//ImageIO.write(img, "png", new File("C:/caves/" + filename));
 		} catch (IOException e) {
 			e.printStackTrace();

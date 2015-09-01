@@ -23,7 +23,6 @@ import javax.media.opengl.awt.GLJPanel;
 import javax.media.opengl.glu.GLU;
 import javax.swing.JFrame;
 
-import com.fisherevans.aphotic.imgcomp.GifSequenceWriter;
 import com.fisherevans.proc_gen.noise.perlin.PerlinNoise;
 import com.jogamp.opengl.util.awt.Screenshot;
 import com.jogamp.opengl.util.gl2.GLUT;

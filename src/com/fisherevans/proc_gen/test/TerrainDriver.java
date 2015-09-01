@@ -4,8 +4,6 @@ import javax.imageio.ImageIO;
 import javax.imageio.stream.FileImageOutputStream;
 import javax.imageio.stream.ImageOutputStream;
 
-import com.fisherevans.aphotic.colors.Gradient;
-import com.fisherevans.aphotic.imgcomp.GifSequenceWriter;
 import com.fisherevans.proc_gen.test.PerlinGenerator.InterpType;
 
 import java.awt.*;

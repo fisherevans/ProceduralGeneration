@@ -9,12 +9,16 @@ public abstract class TerrainGenerator {
 	public int seed, size;
 	
 	private Random _random;
-	
-	public TerrainGenerator(int seed, int size) {
-		this.seed = seed == RANDOM_SEED ? (int)(Math.random()*Integer.MAX_VALUE) : seed;
-		_random = new Random(this.seed);
-		this.size = size;
-	}
+
+    public TerrainGenerator(int seed) {
+        this(seed, 0);
+    }
+
+    public TerrainGenerator(int seed, int size) {
+        this.seed = seed == RANDOM_SEED ? (int)(Math.random()*Integer.MAX_VALUE) : seed;
+        _random = new Random(this.seed);
+        this.size = size;
+    }
 	
 	public abstract TerrainGenerator generate();
 	

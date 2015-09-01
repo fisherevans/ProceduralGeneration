@@ -1,6 +1,6 @@
 package com.fisherevans.proc_gen.test;
 
-import com.fisherevans.aphotic.math.MathUtil;
+import com.fisherevans.proc_gen.MathUtil;
 import com.fisherevans.proc_gen.noise.perlin.PerlinNoise;
 /*
  Elev | Temp | Perc | Climate
@@ -106,7 +106,7 @@ public class World {
   private float getTemp(float halfHeight, int y, float elevation, float noise) {
     float temp = 1f - Math.abs(y-halfHeight)/halfHeight;
     temp = (float) Math.pow(temp, 1)/1.75f;
-    return MathUtil.clamp(0, -(elevation-0.85f)/2f + temp + noise, 1f);
+    return MathUtil.clamp(0, -(elevation - 0.85f) / 2f + temp + noise, 1f);
   }
   
   private void generateAvgPercip() {

@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import com.fisherevans.aphotic.colors.Gradient;
 
 public class TerrainRenderer {
   private static Color TRANSPARENT_WHITE = new Color(255, 255, 255, 190);
