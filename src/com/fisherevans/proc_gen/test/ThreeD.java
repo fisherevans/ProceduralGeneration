@@ -67,7 +67,7 @@ public class ThreeD extends GLJPanel implements GLEventListener, KeyListener {
     _ps.setSizes(64, 32, 64);
     noise = _ps.get3DNoise();
     System.out.println((System.currentTimeMillis()-start)+"ms");
-    ImageOutputStream output = new FileImageOutputStream(new File("C:/terrain/4d_perlin.gif"));
+    ImageOutputStream output = new FileImageOutputStream(new File("terrain/4d_perlin.gif"));
     writer = new GifSequenceWriter(output, BufferedImage.TYPE_INT_RGB, 50, true);
   }
 

@@ -54,7 +54,7 @@ public class TerrainDriver {
     	RAINBOW_GRAD.addPoint(0.75f,  new Color(0, 255, 255));
 	}
 	
-    public static void main(String[] args) throws IOException {
+    public static void main2(String[] args) throws IOException {
     	System.out.println("Generating 32x32x32x32 4D Noise");
     	long start = System.currentTimeMillis();
     	//float[][][][] noise = PerlinNoise.get4DNoise(32);
@@ -62,7 +62,7 @@ public class TerrainDriver {
     	System.out.println("Done.");
     }
 	
-    public static void main2(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
     	int power = 8;
     	int size = 1 << power;
     	int seed = (int)(Math.random()*Integer.MAX_VALUE);
@@ -89,7 +89,7 @@ public class TerrainDriver {
     	
     	start = System.currentTimeMillis();
     	System.out.println("Generating GIF");
-	    ImageOutputStream output = new FileImageOutputStream(new File("C:/terrain/animClouds.gif"));
+	    ImageOutputStream output = new FileImageOutputStream(new File("terrain/animClouds.gif"));
 		GifSequenceWriter writer = new GifSequenceWriter(output, BufferedImage.TYPE_INT_ARGB, 75, true);
 		for(int z = 0;z < clouds.length;z++)
 			writer.writeToSequence(getLayeredMap(ds, clouds[z], z/7, z/5));
@@ -114,7 +114,7 @@ public class TerrainDriver {
         for(int x = 0;x < terrain.length;x++)
             for(int y = 0;y < terrain[x].length;y++)
                 map.setRGB(x, y, g.getColor((float)terrain[x][y]).getRGB());
-        ImageIO.write(map, "png", new File("C:/terrain/" + name + ".png"));
+        ImageIO.write(map, "png", new File("terrain/" + name + ".png"));
     }
     
     public static BufferedImage getImage(double[][] terrain, Gradient g) throws IOException {
@@ -139,7 +139,7 @@ public class TerrainDriver {
             			).getRGB());
             }
         }
-        ImageIO.write(map, "png", new File("C:/terrain/" + name + ".png"));
+        ImageIO.write(map, "png", new File("terrain/" + name + ".png"));
     }
     
     public static BufferedImage getLayeredMap(double[][] terrain, float[][] sky, int sX, int sY) throws IOException {

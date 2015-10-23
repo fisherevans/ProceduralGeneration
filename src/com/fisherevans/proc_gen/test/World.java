@@ -34,7 +34,7 @@ import com.fisherevans.proc_gen.noise.perlin.PerlinNoise;
  High | Hot  | Wet  | Rain Forest
  */
 public class World {
-  private static int WIDTH = 768;
+  private static int WIDTH = 10000;
   private static int HEIGHT = WIDTH/16*9;
   private static float NOISE_SCALE = (2048f/WIDTH)*0.0025f;
 

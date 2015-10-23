@@ -37,6 +37,6 @@ public class Biomes {
         img.setRGB(x, y, COLORS[biomes[x][y]].getRGB());
       }
     }
-    ImageIO.write(img, "png", new File("C:/terrain/biome.png"));
+    ImageIO.write(img, "png", new File("terrain/biome.png"));
   }
 }

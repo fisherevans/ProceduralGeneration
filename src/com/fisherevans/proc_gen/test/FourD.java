@@ -64,11 +64,11 @@ public class FourD extends GLJPanel implements GLEventListener, KeyListener {
     PerlinNoise ps = new PerlinNoise(PerlinNoise.INTERP_TYPE_LINEAR, 4, (int)(Math.random()*Integer.MAX_VALUE), 0.5f);
     float scale = 0.05f;
     ps.setScales(scale, scale, scale, scale*0.125f);
-    ps.setSizes(64, 64, 64, 256);
+    ps.setSizes(32, 32, 32, 1024);
     noise = ps.get4DNoise();
     System.out.println((System.currentTimeMillis()-start)+"ms");
-    ImageOutputStream output = new FileImageOutputStream(new File("C:/terrain/4d_perlin.gif"));
-    writer = new GifSequenceWriter(output, BufferedImage.TYPE_INT_RGB, 50, true);
+    ImageOutputStream output = new FileImageOutputStream(new File("terrain/4d_perlin.gif"));
+    writer = new GifSequenceWriter(output, BufferedImage.TYPE_INT_RGB, 100, true);
   }
   
   public void start() {

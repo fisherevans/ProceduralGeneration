@@ -1,4 +1,4 @@
-package com.fisherevans.aphotic.imgcomp;
+package com.fisherevans.proc_gen.to_sort;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -16,7 +16,7 @@ public class GeneratedTest {
     public static final int[] X_SIGNS = {1, 1, -1, -1};
     public static final int[] Y_SIGNS = {1, -1, -1, 1};
 
-    private ImageComparer _comparer;
+    private ImageComparator _comparer;
     private BufferedImage _baseImage, _smallBaseImage, _finalImage;
     private Graphics2D _finalGfx;
 
@@ -30,9 +30,9 @@ public class GeneratedTest {
 
     public static void main(String[] args) {
         try {
-            BufferedImage img = ImageIO.read(new File("C:/img/map.png"));
+            BufferedImage img = ImageIO.read(new File("generated/galaxy.jpg"));
             GeneratedTest gt = new GeneratedTest(img);
-            int count = 100000;
+            int count = 5000;
             int tick = Math.max(count / 50, 1);
             int barCount = count < 50 ? 50 / count : 1;
             String print = "";
@@ -53,7 +53,7 @@ public class GeneratedTest {
                     break;
             }
             long end = System.currentTimeMillis();
-            ImageIO.write(gt.getFinalImage(), "png", new File("C:/img/out.png"));
+            ImageIO.write(gt.getFinalImage(), "png", new File("generated/out.png"));
             System.out.println("\n" + total + " total generations. " + i + " Polygons. Took " + ((end - start) / 1000.0) + " seconds.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class GeneratedTest {
         _smallBaseImage = new BufferedImage(_smallWidth, _smallHeight, BufferedImage.TYPE_INT_ARGB);
         _smallBaseImage.createGraphics().drawImage(base, 0, 0, _smallWidth, _smallHeight, null);
 
-        _comparer = new ImageComparer(_smallBaseImage);
+        _comparer = new ImageComparator(_smallBaseImage);
 
         _lastGeneration = new BufferedImage(_smallWidth, _smallHeight, BufferedImage.TYPE_INT_RGB);
         _tempGeneration = new BufferedImage(_smallWidth, _smallHeight, BufferedImage.TYPE_INT_RGB);

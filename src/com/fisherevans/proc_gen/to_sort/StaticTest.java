@@ -1,4 +1,4 @@
-package com.fisherevans.aphotic.imgcomp;
+package com.fisherevans.proc_gen.to_sort;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -18,7 +18,7 @@ public class StaticTest {
 			BufferedImage test2 = ImageIO.read(new File("C:/img/test2.jpg"));
 			BufferedImage test3 = ImageIO.read(new File("C:/img/test3.jpg"));
 			BufferedImage test4 = ImageIO.read(new File("C:/img/test4.jpg"));
-			ImageComparer ic = new ImageComparer(test1);
+			ImageComparator ic = new ImageComparator(test1);
 			System.out.println("1 vs 1: " + ic.compare(test1));
 			System.out.println("1 vs 2: " + ic.compare(test2));
 			System.out.println("1 vs 3: " + ic.compare(test3));
@@ -32,7 +32,7 @@ public class StaticTest {
 		try {
 			BufferedImage car = ImageIO.read(new File("C:/img/car.jpg"));
 			BufferedImage black = ImageIO.read(new File("C:/img/black.jpg"));
-			ImageComparer ic = new ImageComparer(car);
+			ImageComparator ic = new ImageComparator(car);
 			System.out.println("car vs car: " + ic.compare(car));
 			System.out.println("car vs black: " + ic.compare(black));
 		} catch(Exception e) {
@@ -46,7 +46,7 @@ public class StaticTest {
 			int ittr = 500;
 			int tick = ittr/50;
 			BufferedImage car = ImageIO.read(new File("C:/img/car.jpg"));
-			ImageComparer ic = new ImageComparer(car);
+			ImageComparator ic = new ImageComparator(car);
 			long start = System.currentTimeMillis();
 			for(int i = 0;i < ittr;i++) {
 				ic.compare(car);

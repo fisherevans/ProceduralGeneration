@@ -62,7 +62,7 @@ public class TerrainRenderer {
       for(int x = 0;x < terrain.length;x++)
           for(int y = 0;y < terrain[x].length;y++)
               map.setRGB(x, y, g.getColor((float)terrain[x][y]).getRGB());
-      ImageIO.write(map, "png", new File("C:/terrain/" + name + ".png"));
+      ImageIO.write(map, "png", new File("terrain/" + name + ".png"));
     } catch(Exception e) {
       e.printStackTrace();
     }

@@ -1,5 +1,5 @@
-package com.fisherevans.aphotic.imgcomp;
-// 
+package com.fisherevans.proc_gen.to_sort;
+//
 //  GifSequenceWriter.java
 //  
 //  Created by Elliot Kroo on 2009-04-25.

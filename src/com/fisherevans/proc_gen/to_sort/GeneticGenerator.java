@@ -1,4 +1,4 @@
-package com.fisherevans.aphotic.imgcomp;
+package com.fisherevans.proc_gen.to_sort;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -16,7 +16,7 @@ public class GeneticGenerator {
     public static final int[] X_SIGNS = {1, 1, -1, -1};
     public static final int[] Y_SIGNS = {1, -1, -1, 1};
 
-    private ImageComparer _comparer;
+    private ImageComparator _comparer;
     private BufferedImage _baseImage, _smallBaseImage, _finalImage;
     private Graphics2D _finalGfx;
 
@@ -34,7 +34,7 @@ public class GeneticGenerator {
         _smallBaseImage = new BufferedImage(_smallWidth, _smallHeight, BufferedImage.TYPE_INT_ARGB);
         _smallBaseImage.createGraphics().drawImage(base, 0, 0, _smallWidth, _smallHeight, null);
 
-        _comparer = new ImageComparer(_smallBaseImage);
+        _comparer = new ImageComparator(_smallBaseImage);
 
         _lastGeneration = new BufferedImage(_smallWidth, _smallHeight, BufferedImage.TYPE_INT_RGB);
         _tempGeneration = new BufferedImage(_smallWidth, _smallHeight, BufferedImage.TYPE_INT_RGB);
