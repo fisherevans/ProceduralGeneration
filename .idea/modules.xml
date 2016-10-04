@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProceduralGeneration.iml" filepath="$PROJECT_DIR$/ProceduralGeneration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/procedural-generation-old/procedural-generation-old.iml" filepath="$PROJECT_DIR$/procedural-generation-old/procedural-generation-old.iml" />
+      <module fileurl="file://$PROJECT_DIR$/procedural-generation-parent.iml" filepath="$PROJECT_DIR$/procedural-generation-parent.iml" />
     </modules>
   </component>
 </project>
