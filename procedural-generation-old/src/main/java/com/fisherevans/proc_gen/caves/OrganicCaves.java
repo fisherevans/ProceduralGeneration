@@ -32,7 +32,7 @@ public class OrganicCaves {
 
         oc.contrast(0.5f);
 
-        oc.renderRawMap("caves/cave.png");
+        oc.renderRawMap("organic.png");
     }
 
     public OrganicCaves(int width, int height, int padding, int pointCount, int seed) {
@@ -140,12 +140,12 @@ public class OrganicCaves {
         }
     }
 
-    public void renderRawMap(String location) throws IOException {
+    public void renderRawMap(String filename) throws IOException {
         BufferedImage img = new BufferedImage(_width, _height, BufferedImage.TYPE_INT_RGB);
         for (int y = 0; y < _height; y++)
             for (int x = 0; x < _width; x++)
                 img.setRGB(x, y, new Color(_map[y][x], _map[y][x], _map[y][x]).getRGB());
-        ImageIO.write(img, "png", new File(location));
+        ImageIO.write(img, "png", new File("gen/cave_" + filename));
     }
 
     private static final float clamp(float x) {

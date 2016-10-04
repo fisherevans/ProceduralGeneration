@@ -135,8 +135,7 @@ public class CaveRenderer {
 		try {
             BufferedImage bigImg = new BufferedImage(img.getWidth()*4, img.getHeight()*4, BufferedImage.TYPE_INT_RGB);
             bigImg.createGraphics().drawImage(img, 0, 0, img.getWidth()*4, img.getHeight()*4, null);
-			ImageIO.write(bigImg, "png", new File("caves/" + filename));
-			//ImageIO.write(img, "png", new File("C:/caves/" + filename));
+			ImageIO.write(bigImg, "png", new File("gen/cave_" + filename));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

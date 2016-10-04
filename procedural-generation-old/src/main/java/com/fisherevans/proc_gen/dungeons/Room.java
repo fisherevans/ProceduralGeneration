@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Room implements Comparable<Room> {
 	private int _left, _right, _top, _bottom;
-	
+
 	public Room(int x1, int y1, int width, int height) {
         _left = x1;
         _right = x1;

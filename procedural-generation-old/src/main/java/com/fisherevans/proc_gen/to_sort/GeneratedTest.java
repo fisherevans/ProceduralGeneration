@@ -5,14 +5,15 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.util.Random;
-import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
 public class GeneratedTest {
-    public static final double SCALE = 0.125;
+    public static final double SCALE = 0.25;
     public static final int[] X_SIGNS = {1, 1, -1, -1};
     public static final int[] Y_SIGNS = {1, -1, -1, 1};
 
@@ -30,9 +31,10 @@ public class GeneratedTest {
 
     public static void main(String[] args) {
         try {
-            BufferedImage img = ImageIO.read(new File("generated/galaxy.jpg"));
+            BufferedImage img = ImageIO.read(new File("/Users/fisher.evans/Desktop/building.png"));
             GeneratedTest gt = new GeneratedTest(img);
-            int count = 5000;
+            int count = 500;
+            int ssTick = count/10;
             int tick = Math.max(count / 50, 1);
             int barCount = count < 50 ? 50 / count : 1;
             String print = "";
@@ -47,17 +49,24 @@ public class GeneratedTest {
                 if (gt.mutate()) {
                     if (i % tick == 0)
                         System.out.print(print);
+                    if(i % ssTick == 0 && i != 0)
+                        write(gt.getFinalImage(), String.valueOf(start), String.format("%05d", i));
                 } else
                     i--;
                 if (System.in.available() > 0)
                     break;
             }
             long end = System.currentTimeMillis();
-            ImageIO.write(gt.getFinalImage(), "png", new File("generated/out.png"));
+            write(gt.getFinalImage(), String.valueOf(start), i + "_final");
             System.out.println("\n" + total + " total generations. " + i + " Polygons. Took " + ((end - start) / 1000.0) + " seconds.");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void write(BufferedImage image, String id, String ssTick) throws IOException {
+        ImageIO.write(image, "png", new File(String.format("gen/generated-image_out_%s_%s.png",
+                id, ssTick)));
     }
 
     public GeneratedTest(BufferedImage base) {

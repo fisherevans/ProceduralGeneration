@@ -53,7 +53,7 @@ public class GeneratedTest {
                     break;
             }
             long end = System.currentTimeMillis();
-            ImageIO.write(gt.getFinalImage(), "png", new File("C:/img/out.png"));
+            ImageIO.write(gt.getFinalImage(), "png", new File("gen/generated-img_out.png"));
             System.out.println("\n" + total + " total generations. " + i + " Polygons. Took " + ((end - start) / 1000.0) + " seconds.");
         } catch (Exception e) {
             e.printStackTrace();

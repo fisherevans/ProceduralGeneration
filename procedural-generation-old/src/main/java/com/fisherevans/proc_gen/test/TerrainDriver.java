@@ -110,7 +110,7 @@ public class TerrainDriver {
         for(int x = 0;x < terrain.length;x++)
             for(int y = 0;y < terrain[x].length;y++)
                 map.setRGB(x, y, g.getColor((float)terrain[x][y]).getRGB());
-        ImageIO.write(map, "png", new File("terrain/" + name + ".png"));
+        ImageIO.write(map, "png", new File("gen/terrain_" + name + ".png"));
     }
     
     public static BufferedImage getImage(double[][] terrain, Gradient g) throws IOException {
@@ -135,7 +135,7 @@ public class TerrainDriver {
             			).getRGB());
             }
         }
-        ImageIO.write(map, "png", new File("terrain/" + name + ".png"));
+        ImageIO.write(map, "png", new File("gen/terrain_" + name + ".png"));
     }
     
     public static BufferedImage getLayeredMap(double[][] terrain, float[][] sky, int sX, int sY) throws IOException {

@@ -56,7 +56,7 @@ public class WorldRenderer {
   private void save() {
     String filename = _name + ".png";
     try {
-      ImageIO.write(_image, "png", new File("worlds/" + filename));
+      ImageIO.write(_image, "png", new File("gen/world_" + filename));
     } catch (IOException e) {
       e.printStackTrace();
     }
