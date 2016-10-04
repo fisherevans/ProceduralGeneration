@@ -12,6 +12,8 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 public class DungeonRenderer {
+	public static final String FILE_PREFIX = "dungeon_";
+
 	public static Color darkGray = new Color(38, 38, 38);
 	public static Color gray = new Color(168, 168, 168);
 	public static Color red = new Color(168, 85, 85);
@@ -20,8 +22,10 @@ public class DungeonRenderer {
 
 	public static void main(String[] args) {
 		//*
-		for(File file:new File("C:/maps").listFiles()) {
-			file.delete();
+		for(File file:new File("gen").listFiles()) {
+			if(file.getName().startsWith(FILE_PREFIX)) {
+				file.delete();
+			}
 		}
 		/**/
 		for(int count = 0;count < 10;count++) {
@@ -146,13 +150,13 @@ public class DungeonRenderer {
 	}
 	
 	public static void saveImage(int id, BufferedImage img, String prefix) {
-		String filename = prefix + "_" + (new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()))
+		String filename = FILE_PREFIX + prefix + "_" + (new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()))
 				+ "_" + id + "_" + DungeonGenerator.lastSeed + ".png";
 		System.out.println("\nSaving image to: " + filename);
 		try {
             BufferedImage bigImg = new BufferedImage(img.getWidth()*4, img.getHeight()*4, BufferedImage.TYPE_INT_RGB);
             bigImg.createGraphics().drawImage(img, 0, 0, img.getWidth()*4, img.getHeight()*4, null);
-			ImageIO.write(bigImg, "png", new File("C:/maps/" + filename));
+			ImageIO.write(bigImg, "png", new File("gen/" + filename));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
