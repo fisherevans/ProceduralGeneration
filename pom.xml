@@ -14,7 +14,7 @@
             </activation>
             <id>default</id>
             <modules>
-                <module>procedural-generation-old</module>
+                <module>old</module>
             </modules>
         </profile>
     </profiles>
