@@ -1,7 +1,7 @@
 package com.fisherevans.procedural_generation.old.test;
 
 import com.fisherevans.procedural_generation.old.MathUtil;
-import com.fisherevans.procedural_generation.old.noise.perlin.PerlinNoise;
+import com.fisherevans.procedural_generation.caves.noise.perlin.PerlinNoise;
 
 /*
  Elev | Temp | Perc | Climate

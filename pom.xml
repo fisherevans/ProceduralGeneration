@@ -15,6 +15,11 @@
             <id>default</id>
             <modules>
                 <module>old</module>
+                <module>caves</module>
+                <module>dungeons</module>
+                <module>noise</module>
+                <module>worlds</module>
+                <module>genetics</module>
             </modules>
         </profile>
     </profiles>

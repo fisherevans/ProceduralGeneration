@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import com.fisherevans.procedural_generation.old.noise.perlin.PerlinNoise;
+import com.fisherevans.procedural_generation.caves.noise.perlin.PerlinNoise;
 
 public class Biomes {
   public static Color[] COLORS = new Color[] {

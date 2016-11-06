@@ -12,7 +12,7 @@ import javax.imageio.stream.FileImageOutputStream;
 import javax.imageio.stream.ImageOutputStream;
 import javax.swing.JFrame;
 
-import com.fisherevans.procedural_generation.old.noise.perlin.PerlinNoise;
+import com.fisherevans.procedural_generation.caves.noise.perlin.PerlinNoise;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
